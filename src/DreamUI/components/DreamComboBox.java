@@ -34,6 +34,7 @@ public class DreamComboBox<T> extends JComboBox<T> {
             model.addElement(object);
             iconTextMap.put(object ,null);
         }
+
         setRenderer(new IconListRenderer(iconTextMap));
     }
 
@@ -55,6 +56,9 @@ public class DreamComboBox<T> extends JComboBox<T> {
             model.addElement((T) s);
         }
     }
+
+
+
 }
 
 

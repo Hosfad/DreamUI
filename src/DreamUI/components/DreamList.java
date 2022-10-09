@@ -19,14 +19,19 @@ public class DreamList<T> extends JList<T> {
         setBackground(UIColours.BUTTON_COLOUR);
         setLayoutOrientation(VERTICAL);
         setBorder(new CompoundBorder(new LineBorder(UIColours.BUTTON_COLOUR.brighter()), new EmptyBorder(2, 2, 2, 2)));
-        setForeground(UIColours.TEXT_COLOR);
         setCellRenderer((list, value, index, isSelected, cellHasFocus) -> {
             Component l = (Component) value;
-            if (isSelected || cellHasFocus) {
-                l.setBackground(UIColours.BUTTON_COLOUR.brighter());
+            if (index % 2 == 0) {
+                l.setBackground(UIColours.BODY_COLOUR.brighter());
             } else {
-                l.setBackground(UIColours.BUTTON_COLOUR);
+                l.setBackground(UIColours.BODY_COLOUR);
             }
+            l.setForeground(UIColours.TEXT_COLOR);
+            if (isSelected || cellHasFocus) {
+                l.setBackground(UIColours.ORANGE_COLOR.brighter());
+                l.setForeground(Color.BLACK);
+            }
+
             return l;
         });
     }
